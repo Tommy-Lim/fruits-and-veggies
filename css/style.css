@@ -2,16 +2,21 @@
 
 body{
   text-align: center;
+  background-color: black;
+  background-image: url("../img/background2.jpg");
+  background-size: cover;
 }
 
 .col-sm-4 .well{
   display: flex;
   justify-content: space-between;
   align-items: center;
+  color: black
 }
 
-.wrong{
-  background-color: rgba(255,0,0,0.3);
+.well.wrong{
+  background-color: rgba(255,0,0,0.6);
+  color: white;
 }
 
 .success{
@@ -20,4 +25,14 @@ body{
 
 .fail{
   color: rgb(255,0,0);
+}
+
+.white-background{
+  background-color: white;
+}
+
+.container{
+  background-color: rgba(0,0,0,0.5);
+  color: white;
+  height: 100vh;
 }
