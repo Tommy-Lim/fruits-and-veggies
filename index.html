@@ -13,29 +13,31 @@
     <body ng-app="App">
         <div class="container" ng-controller="AppController">
           <h1>Fruit and Veggies</h1>
+          <p>Move each fruit and vegetable from the pool to their respective column</p>
+          <hr />
+          <h2 class="success" ng-show="pool.length===0 && allCorrect()">You got it!</h2>
+          <h2 class="fail" ng-show="pool.length===0 && !allCorrect()">Keep trying!</h2>
           <div class="row">
               <div class="col-sm-4">
                 <h2>Fruits</h2>
-                <div class="well" ng-repeat="fruit in fruits track by $index">
-                  <button class="btn btn-primary">&larr;</button>
+                <div class="well" ng-repeat="fruit in fruits track by $index" ng-class="{'wrong': pool.length===0 && !inFruits($index)}">
                   <span>{{fruit}}</span>
-                  <button class="btn btn-primary">&rarr;</button>
+                  <button class="btn btn-primary" ng-click="moveFromFruitsToPool($index)">&rarr;</button>
                 </div>
               </div>
               <div class="col-sm-4">
                 <h2>Pool</h2>
-                <div class="well" ng-repeat="item in items track by $index">
-                  <button class="btn btn-primary">&larr;</button>
+                <div class="well" ng-repeat="item in pool track by $index">
+                  <button class="btn btn-primary" ng-click="moveFromPoolToFruits($index)">&larr;</button>
                   <span>{{item}}</span>
-                  <button class="btn btn-primary">&rarr;</button>
+                  <button class="btn btn-primary" ng-click="moveFromPoolToVegetables($index)">&rarr;</button>
                 </div>
               </div>
               <div class="col-sm-4">
                 <h2>Veggies</h2>
-                <div class="well" ng-repeat="vegetable in vegetables track by $index">
-                  <button class="btn btn-primary">&larr;</button>
+                <div class="well" ng-repeat="vegetable in vegetables track by $index" ng-class="{'wrong': pool.length===0 && !inVegetables($index)}">
+                  <button class="btn btn-primary" ng-click="moveFromVegetablesToPool($index)">&larr;</button>
                   <span>{{vegetable}}</span>
-                  <button class="btn btn-primary">&rarr;</button>
                 </div>
               </div>
           </div>
