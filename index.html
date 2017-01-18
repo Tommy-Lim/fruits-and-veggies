@@ -3,6 +3,7 @@
     <head>
         <title>Fruit and Veggies</title>
         <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css" rel="stylesheet">
+        <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" />
         <link rel="stylesheet" href="css/style.css">
 
         <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.8/angular.min.js"></script>
@@ -22,21 +23,21 @@
                 <h2>Fruits</h2>
                 <div class="well" ng-repeat="fruit in fruits track by $index" ng-class="{'wrong': pool.length===0 && !inFruits($index)}">
                   <span>{{fruit}}</span>
-                  <button class="btn btn-primary" ng-click="moveFromFruitsToPool($index)">&rarr;</button>
+                  <button class="btn btn-primary" ng-click="moveFromFruitsToPool($index)"><i class="fa fa-arrow-right" aria-hidden="true"></i></button>
                 </div>
               </div>
               <div class="col-sm-4">
                 <h2>Pool</h2>
                 <div class="well" ng-repeat="item in pool track by $index">
-                  <button class="btn btn-primary" ng-click="moveFromPoolToFruits($index)">&larr;</button>
+                  <button class="btn btn-primary" ng-click="moveFromPoolToFruits($index)"><i class="fa fa-arrow-left" aria-hidden="true"></i></button>
                   <span>{{item}}</span>
-                  <button class="btn btn-primary" ng-click="moveFromPoolToVegetables($index)">&rarr;</button>
+                  <button class="btn btn-primary" ng-click="moveFromPoolToVegetables($index)"><i class="fa fa-arrow-right" aria-hidden="true"></i></button>
                 </div>
               </div>
               <div class="col-sm-4">
                 <h2>Veggies</h2>
                 <div class="well" ng-repeat="vegetable in vegetables track by $index" ng-class="{'wrong': pool.length===0 && !inVegetables($index)}">
-                  <button class="btn btn-primary" ng-click="moveFromVegetablesToPool($index)">&larr;</button>
+                  <button class="btn btn-primary" ng-click="moveFromVegetablesToPool($index)"><i class="fa fa-arrow-left" aria-hidden="true"></i></button>
                   <span>{{vegetable}}</span>
                 </div>
               </div>
