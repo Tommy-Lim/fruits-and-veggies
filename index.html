@@ -19,28 +19,28 @@
           <h2 class="success" ng-show="pool.length===0 && allCorrect()">You got it!</h2>
           <h2 class="fail" ng-show="pool.length===0 && !allCorrect()">Keep trying!</h2>
           <div class="row">
-              <div class="col-sm-4">
-                <h2>Fruits</h2>
-                <div class="well" ng-repeat="fruit in fruits track by $index" ng-class="{'wrong': pool.length===0 && !inFruits($index)}">
-                  <span>{{fruit}}</span>
-                  <button class="btn btn-primary" ng-click="moveFromFruitsToPool($index)"><i class="fa fa-arrow-right" aria-hidden="true"></i></button>
-                </div>
+            <div class="col-sm-4">
+              <h2>Fruits</h2>
+              <div class="well" ng-repeat="fruit in fruits track by $index" ng-class="{'wrong': pool.length===0 && !inFruits($index)}">
+                <span>{{fruit}}</span>
+                <button class="btn btn-primary" ng-click="moveFromFruitsToPool($index)"><i class="fa fa-arrow-right" aria-hidden="true"></i></button>
               </div>
-              <div class="col-sm-4">
-                <h2>Pool</h2>
-                <div class="well" ng-repeat="item in pool track by $index">
-                  <button class="btn btn-primary" ng-click="moveFromPoolToFruits($index)"><i class="fa fa-arrow-left" aria-hidden="true"></i></button>
-                  <span>{{item}}</span>
-                  <button class="btn btn-primary" ng-click="moveFromPoolToVegetables($index)"><i class="fa fa-arrow-right" aria-hidden="true"></i></button>
-                </div>
+            </div>
+            <div class="col-sm-4">
+              <h2>Pool</h2>
+              <div class="well" ng-repeat="item in pool track by $index">
+                <button class="btn btn-primary" ng-click="moveFromPoolToFruits($index)"><i class="fa fa-arrow-left" aria-hidden="true"></i></button>
+                <span>{{item}}</span>
+                <button class="btn btn-primary" ng-click="moveFromPoolToVegetables($index)"><i class="fa fa-arrow-right" aria-hidden="true"></i></button>
               </div>
-              <div class="col-sm-4">
-                <h2>Veggies</h2>
-                <div class="well" ng-repeat="vegetable in vegetables track by $index" ng-class="{'wrong': pool.length===0 && !inVegetables($index)}">
-                  <button class="btn btn-primary" ng-click="moveFromVegetablesToPool($index)"><i class="fa fa-arrow-left" aria-hidden="true"></i></button>
-                  <span>{{vegetable}}</span>
-                </div>
+            </div>
+            <div class="col-sm-4">
+              <h2>Veggies</h2>
+              <div class="well" ng-repeat="vegetable in vegetables track by $index" ng-class="{'wrong': pool.length===0 && !inVegetables($index)}">
+                <button class="btn btn-primary" ng-click="moveFromVegetablesToPool($index)"><i class="fa fa-arrow-left" aria-hidden="true"></i></button>
+                <span>{{vegetable}}</span>
               </div>
+            </div>
           </div>
         </div>
     </body>

@@ -62,14 +62,14 @@ angular.module('App', [])
       if(vegetables.indexOf(fruit)>=0){
         result = false;
       } else{
-
+        // do nothing
       }
     });
     $scope.vegetables.forEach(function(vegetable){
       if(fruits.indexOf(vegetable)>=0){
         result = false;
       } else{
-
+        // do nothing
       }
     });
     return result;
