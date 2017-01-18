@@ -16,9 +16,10 @@
           <h1>Fruit and Veggies</h1>
           <p>Move each fruit and vegetable from the pool to their respective column</p>
           <hr />
-          <h2 ng-show="pool.length>0">{{pool.length}} more to go</h2>
+          <h2 ng-show="pool.length>0">{{pool.length}} fruits/vegetables left to move</h2>
           <h2 class="success" ng-show="pool.length===0 && allCorrect()">You got it!</h2>
           <h2 class="fail" ng-show="pool.length===0 && !allCorrect()">Keep trying!</h2>
+          <hr />
           <div class="row">
             <div class="col-sm-4">
               <h2>Fruits</h2>
